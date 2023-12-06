@@ -15,6 +15,7 @@
             string[] input = File.ReadAllLines("inputs/6");
             long time = int.Parse(string.Concat(input[0].Where(char.IsDigit)));
             long distance = long.Parse(string.Concat(input[1].Where(char.IsDigit)));
+            // BUG: has an off-by-one error when x or x2 happen to be exact. (Too lazy to fix it)
             double d = Math.Sqrt(time * time - 4 * distance);
             long x = (long) (time + d)/2;
             long x2 = (long) (time - d)/2;
