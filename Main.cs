@@ -13,4 +13,5 @@ D4_2_Alt.Run();
 Console.WriteLine("Day 5");
 D5.Run();
 D5_2.Run();
+D5_2_Alt.Run();
 Console.WriteLine("End");
