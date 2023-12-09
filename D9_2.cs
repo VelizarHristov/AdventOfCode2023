@@ -4,7 +4,7 @@
     {
         public static void Run()
         {
-            int sum = File.ReadLines("inputs/9").Select(line =>
+            int sum = File.ReadLines("inputs/9").Sum(line =>
             {
                 var nums = line.Split(" ").Select(int.Parse).ToList();
                 List<List<int>> allNums = [nums];
@@ -17,7 +17,7 @@
                 foreach (var num in allNums.Select(ls => ls.First()))
                     diff = num - diff;
                 return diff;
-            }).Sum();
+            });
             Console.WriteLine(sum);
         }
     }

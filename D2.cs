@@ -11,7 +11,7 @@
                 { "blue", 14 }
             };
 
-            int sum = File.ReadLines("inputs/2").Select(line =>
+            int sum = File.ReadLines("inputs/2").Sum(line =>
             {
                 var remaining = line.SkipWhile(c => c != ':').Skip(2);
                 while (remaining.Count() > 0)
@@ -25,7 +25,7 @@
                 }
 
                 return int.Parse(string.Concat(line[5..].TakeWhile(char.IsDigit)));
-            }).Sum();
+            });
             Console.WriteLine(sum);
         }
     }

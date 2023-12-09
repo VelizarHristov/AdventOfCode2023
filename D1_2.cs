@@ -17,7 +17,7 @@
                 { "nine", 9 }
             };
 
-            int sum = File.ReadLines("inputs/1").Select(line =>
+            int sum = File.ReadLines("inputs/1").Sum(line =>
             {
                 int? first = null;
                 int? last = null;
@@ -47,7 +47,7 @@
                     }
                 }
                 return first.Value * 10 + last.Value;
-            }).Sum();
+            });
             Console.WriteLine(sum);
         }
     }

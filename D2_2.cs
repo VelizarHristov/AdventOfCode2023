@@ -4,7 +4,7 @@
     {
         public static void Run()
         {
-            int sum = File.ReadLines("inputs/2").Select(line =>
+            int sum = File.ReadLines("inputs/2").Sum(line =>
             {
                 var maxes = new Dictionary<string, int>()
                 {
@@ -23,7 +23,7 @@
                 }
 
                 return maxes.Values.Aggregate((prod, next) => prod * next);
-            }).Sum();
+            });
             Console.WriteLine(sum);
         }
     }
