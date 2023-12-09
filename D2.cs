@@ -24,7 +24,7 @@
                     remaining = remaining.SkipWhile(c => c != ',' && c != ';').Skip(2);
                 }
 
-                return int.Parse(string.Concat(line.Skip(5).TakeWhile(char.IsDigit)));
+                return int.Parse(string.Concat(line[5..].TakeWhile(char.IsDigit)));
             }).Sum();
             Console.WriteLine(sum);
         }

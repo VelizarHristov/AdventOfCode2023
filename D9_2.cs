@@ -4,7 +4,7 @@
     {
         public static void Run()
         {
-            int sum = File.ReadLines("inputs/9_test").Select(line =>
+            int sum = File.ReadLines("inputs/9").Select(line =>
             {
                 var nums = line.Split(" ").Select(int.Parse).ToList();
                 List<List<int>> allNums = [nums];

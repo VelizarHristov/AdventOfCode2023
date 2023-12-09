@@ -5,13 +5,13 @@
         public static void Run()
         {
             string[] lines = File.ReadAllLines("inputs/5");
-            var seeds = string.Concat(lines[0].Skip(7)).Split(" ").Select(long.Parse).ToList();
+            var seeds = lines[0][7..].Split(" ").Select(long.Parse).ToList();
             int curLine = 3;
 
             var nextItems = seeds;
             while (curLine < lines.Length)
             {
-                var nextLines = lines.Skip(curLine).TakeWhile(line => line.Length > 0);
+                var nextLines = lines[curLine..].TakeWhile(line => line.Length > 0);
                 var map = nextLines.Select(line =>
                 {
                     var nums = line.Split(" ").Select(long.Parse).ToList();

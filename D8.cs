@@ -8,9 +8,9 @@
             var instructions = input[0];
             var graph = input.Skip(2).Select(line =>
             {
-                var start = string.Concat(line.Take(3));
-                var left = string.Concat(line.Skip(7).Take(3));
-                var right = string.Concat(line.Skip(12).Take(3));
+                var start = line[..3];
+                var left = line[7..10];
+                var right = line[12..15];
                 return (start, (left, right));
             }).ToDictionary(x => x.start, x => x.Item2);
             var currentNode = "AAA";

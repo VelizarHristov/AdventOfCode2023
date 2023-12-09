@@ -40,7 +40,7 @@
         }
         private static List<LRange> ParseSeeds(string[] lines)
         {
-            var line1 = string.Concat(lines[0].Skip(7)).Split(" ").Select(long.Parse).ToArray();
+            var line1 = lines[0][7..].Split(" ").Select(long.Parse).ToArray();
             List<LRange> seeds = [];
             int curToken = 0;
             while (curToken < line1.Length)

@@ -14,7 +14,7 @@ namespace AdventOfCode2023
             int[] extraCardsExpiry = new int[lines.Length + 10];
             for (int curNum = 0; curNum < lines.Length; curNum++)
             {
-                var res = string.Concat(lines[curNum].Skip(9)).Split("|");
+                var res = lines[curNum][9..].Split("|");
                 var winningNums = Regex.Matches(res[0], "\\d+").Select(x => x.Value).ToHashSet();
                 int count = Regex.Matches(res[1], "\\d+").Count(x => winningNums.Contains(x.Value));
 
