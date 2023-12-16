@@ -32,4 +32,5 @@ D9.Run();
 D9_2.Run();
 Console.WriteLine("Day 10");
 D10.Run();
+D10_2.Run();
 Console.WriteLine("End");

@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace AdventOfCode2023
+﻿namespace AdventOfCode2023
 {
     internal class D10
     {
@@ -30,7 +28,7 @@ namespace AdventOfCode2023
             var grid = File.ReadAllLines("inputs/10").Select(x => x.ToCharArray()).ToArray();
             (int, int) start = (-1, -1);
             for (int i = 0; i < grid.Length; i++)
-                for (int j = 0; j < grid.Length; j++)
+                for (int j = 0; j < grid[i].Length; j++)
                     if (grid[i][j] == 'S')
                         start = (i, j);
             var curCoords = start;
@@ -38,7 +36,7 @@ namespace AdventOfCode2023
             {
                 int newY = start.Item1 + dy;
                 int newX = start.Item2 + dx;
-                if (Helpers.SafeGet(grid, newY, newX) is char next)
+                if (Helpers.SafeGet(grid, newY, newX) is char next && next != default)
                     if (CanReach(next, newY, newX, start.Item1, start.Item2))
                         curCoords = (newY, newX);
             }
