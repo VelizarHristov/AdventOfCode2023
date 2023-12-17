@@ -5,14 +5,12 @@ namespace AdventOfCode2023
 {
     internal class D12_2
     {
-        readonly static int MAX_NUM = 9;
         private static long HashCode(string chars, ImmutableList<int> arrangement)
         {
             long res = 0;
             foreach (var c in arrangement)
                 res = unchecked(res * 31 + c);
-            long hash2 = chars.GetHashCode();
-            return (res << 20) + res ^ hash2;
+            return (res << 20) + res ^ chars.GetHashCode();
         }
         public static void Run()
         {
