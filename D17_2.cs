@@ -13,7 +13,7 @@
             public readonly int movesSoFar = movesSoFar;
             public List<(int, int)> NextDirs()
             {
-                if (movesSoFar < 4)
+                if (movesSoFar < 4 && movesSoFar != 0)
                     return [(dy, dx)];
                 List<(int, int)> res = [];
                 foreach (var dir in allDirs)
@@ -25,13 +25,11 @@
 
         public static void Run()
         {
-            int[][] grid = File.ReadAllLines("inputs/17").Select(line => line.Select(x => int.Parse(x.ToString())).ToArray()).ToArray();
-            State start1 = new(0, 0, 0, 1, 0, 0);
-            State start2 = new(0, 0, 0, 0, 1, 0);
+            int[][] grid = File.ReadAllLines("inputs/17_test").Select(line => line.Select(x => int.Parse(x.ToString())).ToArray()).ToArray();
+            State start = new(0, 0, 0, 1, 0, 0);
             int Heuristic(State state) => grid.Length + grid[0].Length - 2 - state.x - state.y + state.cost;
             PriorityQueue<State, int> fringe = new();
-            fringe.Enqueue(start1, Heuristic(start1));
-            fringe.Enqueue(start2, Heuristic(start2));
+            fringe.Enqueue(start, Heuristic(start));
             Dictionary<(int, int, int, int, int), int> visited = new() { { (0, 0, 1, 0, 2), 0 } };
             int bestSolutionLen = int.MaxValue;
             while (Heuristic(fringe.Peek()) < bestSolutionLen)
