@@ -2,11 +2,11 @@
 {
     internal class Helpers
     {
-        public static A? SafeGet<A>(A[][] ls, int x, int y)
+        public static A? SafeGet<A>(A[][] ls, int y, int x)
         {
             try
             {
-                return ls[x][y];
+                return ls[y][x];
             }
             catch (IndexOutOfRangeException)
             {
