@@ -48,8 +48,11 @@ D14_2.Run();
 Console.WriteLine("Day 15");
 D15.Run();
 D15_2.Run();
-
+Console.WriteLine("Day 16");
+D16.Run();
+D16_2.Run();
 Console.WriteLine("Day 17");
 D17.Run();
 D17_2.Run();
+
 Console.WriteLine("End");
