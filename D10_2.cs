@@ -90,7 +90,7 @@
                         total++;
                 }
             }
-            Console.WriteLine("Total: " + total);
+            Console.WriteLine(total);
         }
     }
 }
