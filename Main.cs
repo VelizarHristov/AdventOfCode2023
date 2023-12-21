@@ -60,5 +60,8 @@ D18_2.Run();
 Console.WriteLine("Day 19");
 D19.Run();
 D19_2.Run();
+Console.WriteLine("Day 20");
+D20.Run();
+D20_2.Run();
 
 Console.WriteLine("End");
