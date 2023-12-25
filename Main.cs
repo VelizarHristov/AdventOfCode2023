@@ -67,11 +67,13 @@ Console.WriteLine("Day 21");
 D21.Run();
 D21_2.Run();
 Console.WriteLine("Day 22");
+D22.Run();
+D22_2.Run();
 Console.WriteLine("Day 23");
 D23.Run();
 D23_2.Run();
 Console.WriteLine("Day 24");
 D24.Run();
 D24_2.Run();
-
-Console.WriteLine("End");
+Console.WriteLine("Day 25");
+D25.Run();
