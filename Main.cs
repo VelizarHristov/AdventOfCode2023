@@ -66,5 +66,12 @@ D20_2.Run();
 Console.WriteLine("Day 21");
 D21.Run();
 D21_2.Run();
+Console.WriteLine("Day 22");
+Console.WriteLine("Day 23");
+D23.Run();
+D23_2.Run();
+Console.WriteLine("Day 24");
+D24.Run();
+D24_2.Run();
 
 Console.WriteLine("End");
