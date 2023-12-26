@@ -2,6 +2,7 @@
 {
     internal class D14_2
     {
+        readonly static List<(int, int)> DIRS = [(-1, 0), (0, -1), (1, 0), (0, 1)];
         public static void Run()
         {
             char[][] grid = File.ReadLines("inputs/14").Select(line => line.ToCharArray()).ToArray();
@@ -14,8 +15,7 @@
             {
                 prevGrid = grid.Select(line => (char[])line.Clone()).ToArray();
                 prevStates.Add(prevGrid);
-                List<(int, int)> directions = [(-1, 0), (0, -1), (1, 0), (0, 1)];
-                foreach (var (dy, dx) in directions)
+                foreach (var (dy, dx) in DIRS)
                 {
                     var yRange = Enumerable.Range(0, grid.Length);
                     var xRange = Enumerable.Range(0, grid[0].Length);

@@ -2,7 +2,7 @@
 {
     internal class D24_2
     {
-        // Relies on using an equation solver
+        // Relies on using an equation solver (not included)
         public static void Run()
         {
             List<string> answer = [];
@@ -19,10 +19,8 @@
                 answer.Add($"z + d_3 * t_{i} = {pos[2]} {(vel[2] < 0 ? "-" : "+")} {Math.Abs(vel[2])} * t_{i}");
                 i++;
             }
-            // enter the printed equation in a solver
-            // the problem's answer is x + y + z
-            // (replace pipes with newlines)
-            Console.WriteLine(string.Join(" | ", answer));
+            Console.WriteLine("Enter the printed equation in a solver. The problem's answer is x + y + z.");
+            Console.WriteLine(string.Join("\n", answer));
         }
     }
 }

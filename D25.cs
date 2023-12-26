@@ -53,7 +53,6 @@
                     parent[i] = i;
                 int lastParent = n;
                 r.Shuffle(edgesInOrder);
-                Console.WriteLine(edgesInOrder[0]);
 
                 int j = 0;
                 while (lastParent < 2 * n - 2)

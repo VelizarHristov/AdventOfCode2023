@@ -1,8 +1,19 @@
-﻿using System.Numerics;
-
-namespace AdventOfCode2023
+﻿namespace AdventOfCode2023
 {
-    // Solution relies heavily on the structure of the data
+    // Solution relies on how in the data, going in one direction leads to no obstacles
+    //   and also that thare are no obstacles at the outermost points
+    // Approach: divide the grid in the following parts:
+    // In n-1 steps, we can reach the corner of all four diagonally adjacent grids
+    // From there, each one independently forms a triangle of grids, whose count can be calculated with math
+    // The triangles ends up unfinished so we need to also count those partial grids
+    // Simultaneously, we go straight up, down, left and right to form four lines
+    // They similarly have up to two not fully visited grids
+    // Finally we add the centre square
+    // We count the tiles in partially accessible grids with breadth-first search in `numReachable`
+    // We also note that within one grid, tiles can be painted like a chessboard, depending on the number
+    //   of moves we can either only access "white" tiles, or "black" ones.
+    // Moving to a neighboring grid flips the white and black tiles, so we also need to keep track of
+    //   which grid has the same tile arrangement as in the middle one (`tilesInBase`) vs not (`tilesInAdjacent`)
     internal class D21_2
     {
         public static void Run()
