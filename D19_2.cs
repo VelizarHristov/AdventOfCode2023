@@ -10,20 +10,7 @@
             public List<Rule> Rules { get; set; } = rules;
             public IDestination FinalCase { get; set; } = finalCase;
         }
-        class Rule(char key, bool moreThan, int compareWith, IDestination dest)
-        {
-            public readonly char key = key;
-            public readonly bool moreThan = moreThan;
-            public readonly int compareWith = compareWith;
-            public readonly IDestination dest = dest;
-            internal void Deconstruct(out char key, out bool moreThan, out int compareWith, out IDestination dest)
-            {
-                key = this.key;
-                moreThan = this.moreThan;
-                compareWith = this.compareWith;
-                dest = this.dest;
-            }
-        }
+        record Rule(char Key, bool MoreThan, int CompareWith, IDestination Dest);
         public static void Run()
         {
             Dictionary<string, Workflow> workflows = [];

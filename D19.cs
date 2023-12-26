@@ -10,20 +10,7 @@
             public List<Rule> Rules { get; set; } = rules;
             public IDestination FinalCase { get; set; } = finalCase;
         }
-        class Rule(char key, bool moreThan, int compareWith, IDestination dest)
-        {
-            public readonly char key = key;
-            public readonly bool moreThan = moreThan;
-            public readonly int compareWith = compareWith;
-            public readonly IDestination dest = dest;
-            internal void Deconstruct(out char key, out bool moreThan, out int compareWith, out IDestination dest)
-            {
-                key = this.key;
-                moreThan = this.moreThan;
-                compareWith = this.compareWith;
-                dest = this.dest;
-            }
-        }
+        record Rule(char Key, bool MoreThan, int CompareWith, IDestination Dest);
         public static void Run()
         {
             Dictionary<string, Workflow> workflows = [];
@@ -65,7 +52,7 @@
                         var (key, moreThan, compareWith, _) = rule;
                         return moreThan ? part[key] > compareWith : part[key] < compareWith;
                     });
-                    var dest = res == null ? next.FinalCase : res.dest;
+                    var dest = res == null ? next.FinalCase : res.Dest;
                     if (dest is Workflow workflow)
                         next = workflow;
                     else if (dest is Accept)

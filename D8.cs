@@ -18,12 +18,9 @@
             while (currentNode != "ZZZ")
             {
                 foreach (var step in instructions)
-                {
-                    if (step == 'L')
-                        currentNode = graph[currentNode].left;
-                    else
-                        currentNode = graph[currentNode].right;
-                }
+                    currentNode = step == 'L'
+                        ? graph[currentNode].left
+                        : graph[currentNode].right;
                 numSteps += instructions.Length;
             }
             Console.WriteLine(numSteps);
