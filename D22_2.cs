@@ -24,7 +24,7 @@
             for (int i = 0; i < bricks.Count; i++)
             {
                 intersect[i] = new bool[bricks.Count];
-                for (int j = 0; j < bricks.Count; j++)
+                for (int j = 0; j < i; j++)
                     intersect[i][j] = brickPoints[i].Intersect(brickPoints[j]).Any();
             }
 
@@ -46,15 +46,18 @@
                 {
                     if (removed.Contains(i) || !zs.Contains(bricks[i].Z1 - 1))
                         continue;
-                    int minZ = 1;
+                    bool found = false;
                     for (int j = 0; j < i; j++)
                     {
-                        if (removed.Contains(j))
-                            continue;
-                        if (intersect[i][j])
-                            minZ = Math.Max(minZ, bricks[j].Z2 + 1);
+                        if (!removed.Contains(j) &&
+                            intersect[i][j] &&
+                            bricks[i].Z1 - 1 == bricks[j].Z2)
+                        {
+                            found = true;
+                            break;
+                        }
                     }
-                    if (minZ != bricks[i].Z1)
+                    if (!found)
                     {
                         removed.Add(i);
                         zs.Add(bricks[i].Z2);
