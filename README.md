@@ -10,7 +10,8 @@ Instead of writing the 4 statements every time, write a function like my `Helper
 The function can be implemented by catching an IndexOutOfRangeException and returning null in that case.
 
 # Verdict on C#:
-My opinion of C# got somewhat worse after this. 
+My opinion of C# was very positive, and got somewhat worse after this. I'm starting with the negatives, scroll to the bottom for positives. I wouldn't use C# if I could use Scala instead, but otherwise it's pretty alright.
+
 The summary is that it often has both good and bad ways of doing things, because of this it's a mess, and sometimes it only has mildly bad ways.
 It also has some bizarre rules which aren't present in other languages that I've used, which seem unnecessary / get in the way in my opinion. Or it does things in its own specific way which is generally not as good as the standard way.
 Sometimes code ends up more verbose because the C# approach requires some boilerplate compared to what I'd do in Scala. Also sometimes you have to roll your own because the standard libraries aren't that good.
