@@ -13,4 +13,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Z3" Version="4.12.2" />
+    <PackageReference Include="Z3.Linq" Version="2.0.0" />
+  </ItemGroup>
+
 </Project>

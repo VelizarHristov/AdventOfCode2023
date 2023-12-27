@@ -4,7 +4,8 @@
     {
         public static void Run()
         {
-            var symbols = File.ReadLines("inputs/25").SelectMany(line =>
+            var input = File.ReadAllLines("inputs/25");
+            var symbols = input.SelectMany(line =>
                 line.Replace(":", "").Split(" ")).Distinct().Order().ToArray();
             Dictionary<string, int> symToInt = [];
             for (int i = 0; i < symbols.Length; i++)
@@ -13,7 +14,7 @@
             Dictionary<int, HashSet<int>> edges = [];
             List<(int, int)> allEdges = [];
 
-            foreach (var line in File.ReadLines("inputs/25"))
+            foreach (var line in input)
             {
                 var parts = line.Split(": ");
                 int origin = symToInt[parts[0]];
